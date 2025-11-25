@@ -12,3 +12,6 @@ $routes->post('/loginProcess', 'AuthController::loginProcess');
 $routes->get('/logout', 'AuthController::logout');
 
 $routes->get('/dashboard', 'DashboardController::index');
+
+$routes->get('/skorSiswa', 'SkorController::index');
+$routes->get('/kelolaSiswa', 'UserController::index');
