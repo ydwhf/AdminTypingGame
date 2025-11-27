@@ -36,7 +36,7 @@ class AuthController extends BaseController
             'username'  => $user['username']
         ]);
 
-        return redirect()->to('/dashboard');
+        return redirect()->to('/skorSiswa');
     }
 
     public function logout()
