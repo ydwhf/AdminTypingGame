@@ -14,27 +14,26 @@
             <ul class="menu">
                 <li class="sidebar-title">Menu</li>
 
-                <li class="sidebar-item active">
-                    <a href="index.html" class='sidebar-link'>
+                <li class="sidebar-item <?= (isset($active) && $active == 'dashboard') ? 'active' : '' ?>">
+                    <a href="<?= base_url('/dashboard') ?>" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
 
-                <li class="sidebar-item">
+                <li class="sidebar-item <?= (isset($active) && $active == 'skor') ? 'active' : '' ?>">
                     <a href="<?= base_url('skorSiswa') ?>" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
+                        <i class="bi bi-bar-chart"></i>
                         <span>Skor Siswa</span>
                     </a>
                 </li>
 
-                <li class="sidebar-item">
+                <li class="sidebar-item <?= (isset($active) && $active == 'kelola_siswa') ? 'active' : '' ?>">
                     <a href="<?= base_url('kelolaSiswa') ?>" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
+                        <i class="bi bi-people-fill"></i>
                         <span>Kelola Siswa</span>
                     </a>
                 </li>
-
             </ul>
         </div>
         <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>

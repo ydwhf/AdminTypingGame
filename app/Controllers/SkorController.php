@@ -20,6 +20,7 @@ class SkorController extends BaseController
         $skor = $this->scoresModel->getScores();
 
         $data = [
+            'active' => 'skor',
             'skor' => $skor
         ];
 

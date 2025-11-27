@@ -9,6 +9,9 @@ class UserController extends BaseController
 {
     public function index()
     {
-        //
+        $data = [
+            'active' => 'dashboard'
+        ];
+        return view('User/index', $data);
     }
 }
