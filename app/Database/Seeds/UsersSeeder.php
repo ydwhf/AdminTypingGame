@@ -8,26 +8,28 @@ class UsersSeeder extends Seeder
 {
     public function run()
     {
-        // Insert akun guru (admin)
-        $data = [
-            [
-                'name'      => 'Admin Guru',
-                'username'  => 'admin',
-                'password'  => password_hash('admin123', PASSWORD_DEFAULT),
-                'role'      => 'guru',
-                'created_at' => date('Y-m-d H:i:s'),
-            ],
+        $users = [];
 
-            // Optional: contoh siswa (kalau mau)
-            [
-                'name'      => 'Siswa Percobaan',
-                'username'  => null,
-                'password'  => null,
-                'role'      => 'murid',
-                'created_at' => date('Y-m-d H:i:s'),
-            ],
+        // Guru default
+        $users[] = [
+            'name'       => 'Admin Guru',
+            'username'   => 'admin',
+            'password'   => password_hash('admin123', PASSWORD_DEFAULT),
+            'role'       => 'guru',
+            'created_at' => date('Y-m-d H:i:s'),
         ];
 
-        $this->db->table('users')->insertBatch($data);
+        // Generate 19 siswa random
+        for ($i = 1; $i <= 19; $i++) {
+            $users[] = [
+                'name'       => 'Siswa ' . $i,
+                'username'   => null,
+                'password'   => null,
+                'role'       => 'murid',
+                'created_at' => date('Y-m-d H:i:s'),
+            ];
+        }
+
+        $this->db->table('users')->insertBatch($users);
     }
 }
