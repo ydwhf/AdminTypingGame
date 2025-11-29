@@ -46,10 +46,10 @@ class ScoresModel extends Model
 
     public function getScores()
     {
-        return $this->select('scores.*, users.name, levels.level_name')
+        return $this->select('scores.id_user, scores.id_level, scores.score, scores.created_at, users.name, levels.level_name')
             ->join('users', 'users.id_user = scores.id_user', 'left')
             ->join('levels', 'levels.id_level = scores.id_level', 'left')
-            ->orderBy('users.name, scores.created_at', 'DESC')
+            ->orderBy('scores.score', 'DESC')
             ->groupBy('scores.id_score')
             ->findAll();
     }

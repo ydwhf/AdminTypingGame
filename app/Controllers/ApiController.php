@@ -10,6 +10,13 @@ use CodeIgniter\HTTP\ResponseInterface;
 
 class ApiController extends BaseController
 {
+    protected $scoresModel;
+
+    public function __construct()
+    {
+        $this->scoresModel = new ScoresModel();
+    }
+
     public function getOrCreate()
     {
         $json = $this->request->getJSON(true);
@@ -73,5 +80,12 @@ class ApiController extends BaseController
             'status' => 'success',
             'message' => 'Score saved!'
         ]);
+    }
+
+    public function history()
+    {
+        $skor = $this->scoresModel->getScores();
+
+        return $this->response->setJSON($skor);
     }
 }
