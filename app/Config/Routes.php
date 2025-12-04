@@ -20,6 +20,7 @@ $routes->get('score/delete/(:num)', 'SkorController::delete/$1');
 $routes->get('/kelolaSiswa', 'UserController::index');
 
 //API
+$routes->post('api/login', 'ApiController::loginUser');
 $routes->post('api/users/getOrCreate', 'ApiController::getOrCreate');
 $routes->post('api/scores/save', 'ApiController::save');
 $routes->get('api/scores/history', 'ApiController::history');

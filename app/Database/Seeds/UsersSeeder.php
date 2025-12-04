@@ -19,6 +19,14 @@ class UsersSeeder extends Seeder
             'created_at' => date('Y-m-d H:i:s'),
         ];
 
+        $users[] = [
+            'name'       => 'Rifky Cihuy',
+            'username'   => 'tes',
+            'password'   => password_hash('tes', PASSWORD_DEFAULT),
+            'role'       => 'murid',
+            'created_at' => date('Y-m-d H:i:s'),
+        ];
+
         // Generate 19 siswa random
         for ($i = 1; $i <= 19; $i++) {
             $users[] = [
