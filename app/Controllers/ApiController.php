@@ -174,4 +174,25 @@ class ApiController extends BaseController
             'message' => 'Score saved & level checked!'
         ]);
     }
+
+    public function getUser($id)
+    {
+        $user = $this->userModel->find($id);
+
+        if (!$user) {
+            return $this->response->setJSON([
+                'status' => false,
+                'message' => 'User tidak ditemukan'
+            ]);
+        }
+
+        return $this->response->setJSON([
+            'status' => true,
+            'data' => [
+                'id_user' => $user['id_user'],
+                'username' => $user['username'],
+                'level_unlocked' => $user['level_unlocked']
+            ]
+        ]);
+    }
 }

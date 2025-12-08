@@ -30,12 +30,12 @@
                     </a>
                 </li>
 
-                <!-- <li class="sidebar-item <?= (isset($active) && $active == 'kelola_siswa') ? 'active' : '' ?>">
+                <li class="sidebar-item <?= (isset($active) && $active == 'kelola_siswa') ? 'active' : '' ?>">
                     <a href="<?= base_url('kelolaSiswa') ?>" class='sidebar-link'>
                         <i class="bi bi-people-fill"></i>
                         <span>Kelola Siswa</span>
                     </a>
-                </li> -->
+                </li>
                 <li class="sidebar-item">
                     <a href="#" data-bs-toggle="modal" data-bs-target="#logoutModal" class="sidebar-link">
                         <i class="bi bi-box-arrow-right"></i>
