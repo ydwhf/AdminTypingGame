@@ -128,6 +128,15 @@
                         <input type="password" class="form-control" id="edit_password" name="password">
                     </div>
                     <div class="mb-3">
+                        <label for="edit_unlocked" class="form-label">Level Unlocked</label>
+                        <select name="level_unlocked" id="edit_unlocked" class="form-select" required>
+                            <option value="">Pilih Level</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
                         <label for="edit_role" class="form-label">Role</label>
                         <select name="role" id="edit_role" class="form-select" required>
                             <option value="">Pilih Role</option>

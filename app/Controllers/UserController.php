@@ -49,6 +49,7 @@ class UserController extends BaseController
         $data = [
             'name' => $this->request->getPost('name'),
             'username' => $this->request->getPost('username'),
+            'level_unlocked' => $this->request->getPost('level_unlocked'),
             'role' => $this->request->getPost('role'),
         ];
 
