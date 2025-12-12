@@ -122,6 +122,7 @@ class ApiController extends BaseController
             'data' => [
                 'id_user' => $user['id_user'],
                 'username' => $user['username'],
+                'name' => $user['name'],
                 'level_unlocked' => $user['level_unlocked'],
             ]
         ]);
