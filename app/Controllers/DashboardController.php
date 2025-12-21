@@ -29,8 +29,6 @@ class DashboardController extends BaseController
         $totalBermain = $this->scoresModel->countScores();
         $dataSkor = $this->scoresModel->getAverageScoreByDate();
         $dataLeaderboard = $this->scoresModel->top3PerLevel();
-        // dd($dataUsers);
-        // $progressUser = $this->scoresModel->getScoreProgressByUser($idUser);
 
         $leaderboard = [];
 
@@ -45,7 +43,7 @@ class DashboardController extends BaseController
                 $leaderboard[$level][] = $row;
             }
         }
-        // dd($leaderboard);
+
         $labels = [];
         $scores = [];
 
@@ -53,14 +51,6 @@ class DashboardController extends BaseController
             $labels[] = $row['play_date'];
             $scores[] = round($row['avg_score'], 2);
         }
-
-        // $progressLabels = [];
-        // $progressScores = [];
-
-        // foreach ($progressUser as $row) {
-        //     $progressLabels[] = date('d M', strtotime($row['created_at']));
-        //     $progressScores[] = $row['score'];
-        // }
 
         $data = [
             'active' => 'dashboard',
@@ -71,11 +61,7 @@ class DashboardController extends BaseController
             'labels' => $labels,
             'scores' => $scores,
             'leaderboard' => $leaderboard,
-            // 'progressUser' => $progressUser,
-            // 'progressLabels' => $progressLabels,
-            // 'progressScores' => $progressScores,
         ];
-        // dd($data);
         return view('Dashboard/index', $data);
     }
 
