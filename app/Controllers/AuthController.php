@@ -33,10 +33,12 @@ class AuthController extends BaseController
         session()->set([
             'logged_in' => true,
             'user_id'   => $user['id_user'],
-            'username'  => $user['username']
+            'username'  => $user['username'],
+            'name'  => $user['name'],
+            'role'  => $user['role']
         ]);
 
-        return redirect()->to('/skorSiswa');
+        return redirect()->to('/dashboard');
     }
 
     public function logout()

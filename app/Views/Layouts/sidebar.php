@@ -16,12 +16,12 @@
             <ul class="menu">
                 <li class="sidebar-title">Menu</li>
 
-                <!-- <li class="sidebar-item <?= (isset($active) && $active == 'dashboard') ? 'active' : '' ?>">
+                <li class="sidebar-item <?= (isset($active) && $active == 'dashboard') ? 'active' : '' ?>">
                     <a href="<?= base_url('/dashboard') ?>" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
-                </li> -->
+                </li>
 
                 <li class="sidebar-item <?= (isset($active) && $active == 'skor') ? 'active' : '' ?>">
                     <a href="<?= base_url('skorSiswa') ?>" class='sidebar-link'>

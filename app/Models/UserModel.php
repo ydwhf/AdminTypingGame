@@ -43,4 +43,17 @@ class UserModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function countUsers()
+    {
+        return $this->countAllResults();
+    }
+
+    public function getUsers()
+    {
+        return $this->select('id_user, name, username')
+            ->where('role', 'murid')
+            ->orderBy('name', 'ASC')
+            ->findAll();
+    }
 }

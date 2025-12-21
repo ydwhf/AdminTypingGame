@@ -156,48 +156,29 @@
 
 <?php if (session()->getFlashdata('error')) : ?>
     <script>
-        window.onload = function() {
+        document.addEventListener('DOMContentLoaded', function() {
             Swal.fire({
                 icon: 'error',
                 title: 'Gagal!',
-                text: '<?= session()->getFlashdata('error') ?>'
+                text: <?= json_encode(session()->getFlashdata('error')) ?>
             });
-        }
+        });
     </script>
 <?php endif; ?>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
-
-
-<?php if (session()->getFlashdata('error')) : ?>
+<?php if (session()->getFlashdata('success')) : ?>
     <script>
-        Swal.fire({
-            icon: 'error',
-            title: 'Gagal!',
-            text: '<?= session()->getFlashdata('error') ?>'
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: <?= json_encode(session()->getFlashdata('success')) ?>
+            });
         });
     </script>
 <?php endif; ?>
 
 <script>
-    $(document).ready(function() {
-        $('#userTable').DataTable({
-            responsive: true,
-            language: {
-                url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/id.json'
-            },
-            pageLength: 10,
-            order: [
-                [0, 'asc']
-            ],
-            columnDefs: [{
-                orderable: false,
-                targets: 5
-            }]
-        });
-    });
-
     // FIX: nama fungsi HARUS deleteUser karena tombol manggil itu
     function deleteUser(id) {
         Swal.fire({

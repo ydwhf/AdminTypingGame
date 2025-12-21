@@ -2,7 +2,7 @@
    <?= $this->section('content') ?>
 
    <div class="page-heading">
-       <h3>Profile Statistics</h3>
+       <h3>Dashboard</h3>
    </div>
    <div class="page-content">
        <section class="row">
@@ -11,15 +11,13 @@
                    <div class="col-6 col-lg-3 col-md-6">
                        <div class="card">
                            <div class="card-body px-3 py-4-5">
-                               <div class="row">
-                                   <div class="col-md-4">
-                                       <div class="stats-icon purple">
-                                           <i class="iconly-boldShow"></i>
-                                       </div>
+                               <div class="d-flex align-items-center stats-wrapper">
+                                   <div class="stats-icon purple">
+                                       <i class="iconly-boldProfile"></i>
                                    </div>
-                                   <div class="col-md-8">
-                                       <h6 class="text-muted font-semibold">Profile Views</h6>
-                                       <h6 class="font-extrabold mb-0">112.000</h6>
+                                   <div class="stats-content">
+                                       <h6 class="text-muted mb-1">Total Siswa</h6>
+                                       <h4 class="mb-0 fw-bold"><?= $totalUsers ?></h4>
                                    </div>
                                </div>
                            </div>
@@ -28,15 +26,13 @@
                    <div class="col-6 col-lg-3 col-md-6">
                        <div class="card">
                            <div class="card-body px-3 py-4-5">
-                               <div class="row">
-                                   <div class="col-md-4">
-                                       <div class="stats-icon blue">
-                                           <i class="iconly-boldProfile"></i>
-                                       </div>
+                               <div class="d-flex align-items-center stats-wrapper">
+                                   <div class="stats-icon blue">
+                                       <i class="fas fa-file-alt"></i>
                                    </div>
-                                   <div class="col-md-8">
-                                       <h6 class="text-muted font-semibold">Followers</h6>
-                                       <h6 class="font-extrabold mb-0">183.000</h6>
+                                   <div class="stats-content">
+                                       <h6 class="text-muted mb-1">Total Soal</h6>
+                                       <h4 class="mb-0 fw-bold">30</h4>
                                    </div>
                                </div>
                            </div>
@@ -45,15 +41,13 @@
                    <div class="col-6 col-lg-3 col-md-6">
                        <div class="card">
                            <div class="card-body px-3 py-4-5">
-                               <div class="row">
-                                   <div class="col-md-4">
-                                       <div class="stats-icon green">
-                                           <i class="iconly-boldAdd-User"></i>
-                                       </div>
+                               <div class="d-flex align-items-center stats-wrapper">
+                                   <div class="stats-icon green">
+                                       <i class="fas fa-layer-group"></i>
                                    </div>
-                                   <div class="col-md-8">
-                                       <h6 class="text-muted font-semibold">Following</h6>
-                                       <h6 class="font-extrabold mb-0">80.000</h6>
+                                   <div class="stats-content">
+                                       <h6 class="text-muted mb-1">Total Level</h6>
+                                       <h4 class="mb-0 fw-bold"><?= $totalLevel ?></h4>
                                    </div>
                                </div>
                            </div>
@@ -62,15 +56,13 @@
                    <div class="col-6 col-lg-3 col-md-6">
                        <div class="card">
                            <div class="card-body px-3 py-4-5">
-                               <div class="row">
-                                   <div class="col-md-4">
-                                       <div class="stats-icon red">
-                                           <i class="iconly-boldBookmark"></i>
-                                       </div>
+                               <div class="d-flex align-items-center stats-wrapper">
+                                   <div class="stats-icon red">
+                                       <i class="iconly-boldBookmark"></i>
                                    </div>
-                                   <div class="col-md-8">
-                                       <h6 class="text-muted font-semibold">Saved Post</h6>
-                                       <h6 class="font-extrabold mb-0">112</h6>
+                                   <div class="stats-content">
+                                       <h6 class="text-muted mb-1">Total Tes</h6>
+                                       <h4 class="mb-0 fw-bold"><?= $totalBermain ?></h4>
                                    </div>
                                </div>
                            </div>
@@ -81,118 +73,39 @@
                    <div class="col-12">
                        <div class="card">
                            <div class="card-header">
-                               <h4>Profile Visit</h4>
+                               <h4>Perkembangan Skor Siswa</h4>
+                               <small>Rata-rata skor per hari</small>
                            </div>
                            <div class="card-body">
-                               <div id="chart-profile-visit"></div>
+                               <canvas id="scoreChart" height="100"></canvas>
                            </div>
                        </div>
                    </div>
                </div>
-               <div class="row">
-                   <div class="col-12 col-xl-4">
-                       <div class="card">
-                           <div class="card-header">
-                               <h4>Profile Visit</h4>
-                           </div>
-                           <div class="card-body">
-                               <div class="row">
-                                   <div class="col-6">
-                                       <div class="d-flex align-items-center">
-                                           <svg class="bi text-primary" width="32" height="32" fill="blue" style="width:10px">
-                                               <use xlink:href="assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
-                                           </svg>
-                                           <h5 class="mb-0 ms-3">Europe</h5>
-                                       </div>
-                                   </div>
-                                   <div class="col-6">
-                                       <h5 class="mb-0">862</h5>
-                                   </div>
-                                   <div class="col-12">
-                                       <div id="chart-europe"></div>
-                                   </div>
-                               </div>
-                               <div class="row">
-                                   <div class="col-6">
-                                       <div class="d-flex align-items-center">
-                                           <svg class="bi text-success" width="32" height="32" fill="blue" style="width:10px">
-                                               <use xlink:href="assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
-                                           </svg>
-                                           <h5 class="mb-0 ms-3">America</h5>
-                                       </div>
-                                   </div>
-                                   <div class="col-6">
-                                       <h5 class="mb-0">375</h5>
-                                   </div>
-                                   <div class="col-12">
-                                       <div id="chart-america"></div>
-                                   </div>
-                               </div>
-                               <div class="row">
-                                   <div class="col-6">
-                                       <div class="d-flex align-items-center">
-                                           <svg class="bi text-danger" width="32" height="32" fill="blue" style="width:10px">
-                                               <use xlink:href="assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
-                                           </svg>
-                                           <h5 class="mb-0 ms-3">Indonesia</h5>
-                                       </div>
-                                   </div>
-                                   <div class="col-6">
-                                       <h5 class="mb-0">1025</h5>
-                                   </div>
-                                   <div class="col-12">
-                                       <div id="chart-indonesia"></div>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
+
+               <div class="row mb-3">
+                   <div class="col-md-4">
+                       <label class="form-label fw-bold">Filter Siswa</label>
+                       <select id="filterUser" class="form-select">
+                           <option value="">-- Pilih Siswa --</option>
+                           <?php foreach ($dataUsers as $user) : ?>
+                               <option value="<?= $user['id_user']; ?>">
+                                   <?= esc($user['name']); ?>
+                               </option>
+                           <?php endforeach; ?>
+                       </select>
                    </div>
-                   <div class="col-12 col-xl-8">
+               </div>
+
+               <div class="row">
+                   <div class="col-12">
                        <div class="card">
                            <div class="card-header">
-                               <h4>Latest Comments</h4>
+                               <h4>Progress Skor Siswa (Per Main)</h4>
+                               <small>Riwayat skor setiap kali siswa bermain</small>
                            </div>
                            <div class="card-body">
-                               <div class="table-responsive">
-                                   <table class="table table-hover table-lg">
-                                       <thead>
-                                           <tr>
-                                               <th>Name</th>
-                                               <th>Comment</th>
-                                           </tr>
-                                       </thead>
-                                       <tbody>
-                                           <tr>
-                                               <td class="col-3">
-                                                   <div class="d-flex align-items-center">
-                                                       <div class="avatar avatar-md">
-                                                           <img src="assets/images/faces/5.jpg">
-                                                       </div>
-                                                       <p class="font-bold ms-3 mb-0">Si Cantik</p>
-                                                   </div>
-                                               </td>
-                                               <td class="col-auto">
-                                                   <p class=" mb-0">Congratulations on your graduation!</p>
-                                               </td>
-                                           </tr>
-                                           <tr>
-                                               <td class="col-3">
-                                                   <div class="d-flex align-items-center">
-                                                       <div class="avatar avatar-md">
-                                                           <img src="assets/images/faces/2.jpg">
-                                                       </div>
-                                                       <p class="font-bold ms-3 mb-0">Si Ganteng</p>
-                                                   </div>
-                                               </td>
-                                               <td class="col-auto">
-                                                   <p class=" mb-0">Wow amazing design! Can you make another
-                                                       tutorial for
-                                                       this design?</p>
-                                               </td>
-                                           </tr>
-                                       </tbody>
-                                   </table>
-                               </div>
+                               <canvas id="progressChart" height="120"></canvas>
                            </div>
                        </div>
                    </div>
@@ -203,62 +116,133 @@
                    <div class="card-body py-4 px-5">
                        <div class="d-flex align-items-center">
                            <div class="avatar avatar-xl">
-                               <img src="assets/images/faces/1.jpg" alt="Face 1">
+                               <img src="assets/images/faces/2.jpg" alt="Face 1">
                            </div>
                            <div class="ms-3 name">
-                               <h5 class="font-bold">John Duck</h5>
-                               <h6 class="text-muted mb-0">@johnducky</h6>
+                               <h5 class="font-bold"><?= ucfirst(session('name')) ?></h5>
+                               <h6 class="text-muted mb-0">@<?= session('username') ?></h6>
                            </div>
                        </div>
                    </div>
                </div>
-               <div class="card">
-                   <div class="card-header">
-                       <h4>Recent Messages</h4>
-                   </div>
-                   <div class="card-content pb-4">
-                       <div class="recent-message d-flex px-4 py-3">
-                           <div class="avatar avatar-lg">
-                               <img src="assets/images/faces/4.jpg">
+
+               <?php if (!empty($leaderboard)) : ?>
+                   <?php foreach ($leaderboard as $levelName => $players) : ?>
+
+                       <div class="card mb-4">
+                           <div class="card-header">
+                               <h4>🏆 Leaderboard <?= esc($levelName) ?></h4>
                            </div>
-                           <div class="name ms-4">
-                               <h5 class="mb-1">Hank Schrader</h5>
-                               <h6 class="text-muted mb-0">@johnducky</h6>
+
+                           <div class="card-content pb-4">
+
+                               <?php
+                                $medal = ['🥇', '🥈', '🥉'];
+                                ?>
+
+                               <?php foreach ($players as $index => $row) : ?>
+                                   <div class="recent-message d-flex px-4 py-3 align-items-center <?= $index === 0 ? 'bg-light-primary' : '' ?>">
+
+                                       <div class="avatar avatar-lg">
+                                           <img src="<?= base_url('assets/images/faces/' . ($index + 1) . '.jpg') ?>">
+                                       </div>
+
+                                       <div class="name ms-4">
+                                           <h5 class="mb-1">
+                                               <?= $medal[$index] ?> <?= esc($row['name']) ?>
+                                           </h5>
+
+                                           <h6 class="text-muted mb-0">
+                                               Skor: <?= esc($row['best_score']) ?>
+                                           </h6>
+                                       </div>
+
+                                   </div>
+                               <?php endforeach ?>
+
                            </div>
                        </div>
-                       <div class="recent-message d-flex px-4 py-3">
-                           <div class="avatar avatar-lg">
-                               <img src="assets/images/faces/5.jpg">
-                           </div>
-                           <div class="name ms-4">
-                               <h5 class="mb-1">Dean Winchester</h5>
-                               <h6 class="text-muted mb-0">@imdean</h6>
-                           </div>
-                       </div>
-                       <div class="recent-message d-flex px-4 py-3">
-                           <div class="avatar avatar-lg">
-                               <img src="assets/images/faces/1.jpg">
-                           </div>
-                           <div class="name ms-4">
-                               <h5 class="mb-1">John Dodol</h5>
-                               <h6 class="text-muted mb-0">@dodoljohn</h6>
-                           </div>
-                       </div>
-                       <div class="px-4">
-                           <button class='btn btn-block btn-xl btn-light-primary font-bold mt-3'>Start
-                               Conversation</button>
-                       </div>
+
+                   <?php endforeach ?>
+               <?php else : ?>
+                   <div class="alert alert-info">
+                       Belum ada data leaderboard.
                    </div>
-               </div>
-               <div class="card">
-                   <div class="card-header">
-                       <h4>Visitors Profile</h4>
-                   </div>
-                   <div class="card-body">
-                       <div id="chart-visitors-profile"></div>
-                   </div>
-               </div>
+               <?php endif ?>
            </div>
        </section>
    </div>
+
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+   <script>
+       const labels = <?= json_encode($labels) ?>;
+       const scores = <?= json_encode($scores) ?>;
+
+       const ctx = document.getElementById('scoreChart').getContext('2d');
+
+       new Chart(ctx, {
+           type: 'line',
+           data: {
+               labels: labels,
+               datasets: [{
+                   label: 'Rata-rata Skor',
+                   data: scores,
+                   borderWidth: 2,
+                   tension: 0.4,
+                   fill: true
+               }]
+           },
+           options: {
+               scales: {
+                   y: {
+                       beginAtZero: true,
+                       max: 100
+                   }
+               }
+           }
+       });
+   </script>
+   <script>
+       const ctxProgress = document.getElementById('progressChart').getContext('2d');
+
+       const progressChart = new Chart(ctxProgress, {
+           type: 'line',
+           data: {
+               labels: [], // awal kosong
+               datasets: [{
+                   label: 'Skor',
+                   data: [],
+                   borderWidth: 2,
+                   tension: 0.4,
+                   fill: false
+               }]
+           },
+           options: {
+               responsive: true,
+               scales: {
+                   y: {
+                       beginAtZero: true
+                   }
+               }
+           }
+       });
+   </script>
+
+   <script>
+       document.getElementById('filterUser').addEventListener('change', function() {
+           const idUser = this.value;
+
+           if (!idUser) return;
+
+           fetch(`<?= base_url('dashboard/progress'); ?>/${idUser}`)
+               .then(res => res.json())
+               .then(data => {
+                   progressChart.data.labels = data.labels;
+                   progressChart.data.datasets[0].data = data.scores;
+                   progressChart.update();
+               });
+       });
+   </script>
+
    <?= $this->endSection() ?>

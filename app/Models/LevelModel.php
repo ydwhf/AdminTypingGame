@@ -43,4 +43,9 @@ class LevelModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function countLevel()
+    {
+        return $this->countAllResults();
+    }
 }

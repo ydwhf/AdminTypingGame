@@ -57,49 +57,31 @@
     </div>
 </div>
 
-<?php if (session()->getFlashdata('success')) : ?>
+<?php if (session()->getFlashdata('error')) : ?>
     <script>
-        Swal.fire({
-            toast: true,
-            position: 'top-end',
-            icon: 'success',
-            title: '<?= session()->getFlashdata('success') ?>',
-            showConfirmButton: false,
-            timer: 2000
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Gagal!',
+                text: <?= json_encode(session()->getFlashdata('error')) ?>
+            });
         });
     </script>
 <?php endif; ?>
 
-
-<?php if (session()->getFlashdata('error')) : ?>
+<?php if (session()->getFlashdata('success')) : ?>
     <script>
-        Swal.fire({
-            icon: 'error',
-            title: 'Gagal!',
-            text: '<?= session()->getFlashdata('error') ?>'
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: <?= json_encode(session()->getFlashdata('success')) ?>
+            });
         });
     </script>
 <?php endif; ?>
 
 <script>
-    $(document).ready(function() {
-        $('#skorTable').DataTable({
-            responsive: true,
-            language: {
-                url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/id.json'
-            },
-            pageLength: 10,
-            order: [
-                [0, 'asc']
-            ], // Urutkan berdasarkan tanggal terbaru
-            columnDefs: [{
-                    orderable: false,
-                    targets: 5
-                } // Kolom aksi tidak bisa diurutkan
-            ]
-        });
-    });
-
     function deleteScore(id) {
         Swal.fire({
             title: 'Yakin hapus?',

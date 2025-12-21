@@ -11,7 +11,9 @@ $routes->get('/', 'AuthController::index');
 $routes->post('/loginProcess', 'AuthController::loginProcess');
 $routes->get('/logout', 'AuthController::logout');
 
+//Dashboard
 $routes->get('/dashboard', 'DashboardController::index');
+$routes->get('dashboard/progress/(:num)', 'DashboardController::getProgressUser/$1');
 
 //Skor
 $routes->get('/skorSiswa', 'SkorController::index');
